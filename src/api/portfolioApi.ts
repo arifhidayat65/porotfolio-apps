@@ -37,7 +37,7 @@ import xdImg from '../assets/skills/xd.png';
 import mainLogo from '../assets/logo.png';
 
 export const fetchProjects = async (): Promise<Project[]> => {
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  await new Promise((resolve) => setTimeout(resolve, 300));
   return [
     {
       title: 'Enigma Camp 2.0',
@@ -115,7 +115,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
 };
 
 export const fetchEducation = async (): Promise<Education[]> => {
-  await new Promise((resolve) => setTimeout(resolve, 400));
+  await new Promise((resolve) => setTimeout(resolve, 300));
   return [
     {
       name: "University Computer Indonesia",
@@ -141,7 +141,7 @@ export const fetchEducation = async (): Promise<Education[]> => {
 };
 
 export const fetchExperiences = async (): Promise<Experience[]> => {
-  await new Promise((resolve) => setTimeout(resolve, 600));
+  await new Promise((resolve) => setTimeout(resolve, 300));
   return [
     {
       company: 'PT Pam Jaya',
