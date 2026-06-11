@@ -1,0 +1,28 @@
+.wave-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave-container.bottom {
+  bottom: 0;
+}
+
+.wave-container.top {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.wave-container.flip svg {
+  transform: scaleX(-1);
+}
+
+.wave-container svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
