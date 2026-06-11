@@ -5,8 +5,6 @@ import enigmaLogo from '../assets/portfolio/enigmacamp.png';
 import bsiLogo from '../assets/portfolio/bankbsi.png';
 import backofficeLogo from '../assets/portfolio/backoffice.png';
 import pilgrimLogo from '../assets/portfolio/pilgrim.png';
-import conspiracyLogo from '../assets/portfolio/conspiracy.png';
-import govBrLogo from '../assets/portfolio/gov_br.svg';
 
 // Import design images
 import keepItGreenLogo from '../assets/portfolio/Keep it green/cover.png';
