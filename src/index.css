@@ -2,17 +2,23 @@
   /* Colors - Light Mode (Default) */
   --primary: #669db3;
   --primary-hover: #55879b;
+  --primary-light: rgba(102, 157, 179, 0.1);
   --bg-main: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-alt: #f1f5f9;
-  --text-main: #2c3e50;
-  --text-muted: #535a5e;
-  --border-color: #e2e8f0;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(226, 232, 240, 0.8);
   --card-bg: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   
   /* Spacing */
-  --section-padding: 5rem 1rem;
-  --container-max-width: 1100px;
+  --section-padding: 6rem 1rem;
+  --container-max-width: 1200px;
 
   /* Typography */
   --font-family: 'Montserrat', sans-serif;
@@ -20,25 +26,27 @@
 
 /* Dark Mode Overrides */
 [data-theme='dark'] {
-  --bg-main: #1a1f22;
-  --bg-secondary: #262c30;
-  --bg-alt: #161b1e;
-  --text-main: #e2e8f0;
+  --bg-main: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-alt: #111827;
+  --text-main: #f1f5f9;
   --text-muted: #94a3b8;
-  --border-color: #334155;
-  --card-bg: #262c30;
+  --border-color: rgba(51, 65, 85, 0.5);
+  --card-bg: #1e293b;
+  --glass-bg: rgba(15, 23, 42, 0.7);
 }
 
 /* Optional: Support system preference by default if no attribute is set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg-main: #1a1f22;
-    --bg-secondary: #262c30;
-    --bg-alt: #161b1e;
-    --text-main: #e2e8f0;
+    --bg-main: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-alt: #111827;
+    --text-main: #f1f5f9;
     --text-muted: #94a3b8;
-    --border-color: #334155;
-    --card-bg: #262c30;
+    --border-color: rgba(51, 65, 85, 0.5);
+    --card-bg: #1e293b;
+    --glass-bg: rgba(15, 23, 42, 0.7);
   }
 }
 
@@ -50,7 +58,7 @@
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -59,7 +67,12 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
-  border-radius: 9px;
+  border-radius: 10px;
+  border: 2px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
 }
 
 html {
@@ -70,7 +83,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-main);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -82,7 +95,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
 }
 
 ul {
@@ -92,7 +105,7 @@ ul {
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 section {
@@ -100,38 +113,53 @@ section {
 }
 
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 0.75rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+  gap: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
   background-color: var(--primary);
   color: white;
+  box-shadow: 0 4px 14px 0 rgba(102, 157, 179, 0.39);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 157, 179, 0.45);
 }
 
 .section-title {
-  font-size: 2.25rem;
-  margin-bottom: 3rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 3.5rem;
   text-align: center;
   position: relative;
+  letter-spacing: -0.025em;
 }
 
 .section-title::after {
   content: '';
   display: block;
-  width: 50px;
-  height: 4px;
+  width: 70px;
+  height: 5px;
   background-color: var(--primary);
-  margin: 0.75rem auto 0;
-  border-radius: 2px;
+  margin: 1rem auto 0;
+  border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+

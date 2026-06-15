@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { usePortfolioData } from '../../hooks/usePortfolioData';
 import Wave from '../ui/Wave';
 import './AboutSection.css';
@@ -8,13 +9,24 @@ const AboutSection = () => {
   return (
     <section id="about" className="about bg-alt">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">About Me.</h2>
-          <hr className="title-line" />
-        </div>
+        </motion.div>
         
         <div className="about-content">
-          <div className="education-timeline">
+          <motion.div 
+            className="education-timeline"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h3 className="sub-title">Education</h3>
             {education.map((edu, index) => (
               <div key={index} className="timeline-item">
@@ -36,7 +48,7 @@ const AboutSection = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       <Wave color="var(--bg-main)" flip />

@@ -1,47 +1,86 @@
+import { motion, type Variants } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { Download, Send } from 'lucide-react';
 import Wave from '../ui/Wave';
 import arifImage from '../../assets/arif.png';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="home" className="hero">
       <div className="container hero-container">
-        <div className="hero-visual">
+        <motion.div 
+          className="hero-visual"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="profile-wrapper">
+            <div className="profile-blob"></div>
             <img src={arifImage} alt="Arif Hidayat" className="profile-img" />
             <div className="status-badge">
               <span className="pulse"></span>
               Available for Hire
             </div>
           </div>
-        </div>
-        <div className="hero-content">
-          <h1 className="hero-title">Welcome to my portfolio!</h1>
-          <p className="hero-description">
-            I have a degree in Software Engineering from the University of Computer Indonesia 
-            and I am interested in Software Development, Web Development, Software Architecture 
-            and related areas.
-          </p>
-          <p className="hero-description">
-            I started in the technology area when I was a teenager, even without knowing 
-            that I was manipulating javascript, html and css I used them to make adjustments 
-            in an RPG blog. After that I took a technical course where I learned basic computer 
-            and programming concepts and realized that this is what I wanted to do.
-          </p>
+        </motion.div>
+
+        <motion.div 
+          className="hero-content"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h2 variants={itemVariants} className="hero-subtitle">Hello, I'm</motion.h2>
+          <motion.h1 variants={itemVariants} className="hero-title">
+            Arif <span>Hidayat</span>
+          </motion.h1>
+          <motion.div variants={itemVariants} className="hero-description-wrapper">
+            <p className="hero-description">
+              Software Engineering Graduate from University of Computer Indonesia. 
+              Specializing in <strong>Full-stack Web Development</strong> & <strong>Software Architecture</strong>.
+            </p>
+            <p className="hero-description secondary">
+              Passionate about creating clean, scalable, and user-centric digital experiences.
+            </p>
+          </motion.div>
           
-          <div className="hero-social">
+          <motion.div variants={itemVariants} className="hero-social">
             <a href="https://www.linkedin.com/in/arif-hidayat-8b173212b/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaLinkedin size={20} /></a>
             <a href="https://github.com/arifhidayat65" target="_blank" rel="noopener noreferrer" className="social-btn"><FaGithub size={20} /></a>
             <a href="https://twitter.com/Arifhidayat65" target="_blank" rel="noopener noreferrer" className="social-btn"><FaTwitter size={20} /></a>
             <a href="https://www.facebook.com/arifefhidayat/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaFacebook size={20} /></a>
-          </div>
+          </motion.div>
 
-          <div className="hero-actions">
-            <a href="#" className="btn btn-primary">Download CV</a>
-            <a href="#contact" className="btn btn-outline">Contact Me</a>
-          </div>
-        </div>
+          <motion.div variants={itemVariants} className="hero-actions">
+            <a href="#" className="btn btn-primary">
+              <Download size={18} /> Download CV
+            </a>
+            <a href="#contact" className="btn btn-outline">
+              <Send size={18} /> Contact Me
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
       <Wave color="var(--bg-secondary)" />
     </section>

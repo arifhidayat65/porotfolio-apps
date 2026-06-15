@@ -32,11 +32,55 @@ import reactImg from '../assets/skills/react.png';
 import vuejsImg from '../assets/skills/vuejs.png';
 import xdImg from '../assets/skills/xd.png';
 
-import mainLogo from '../assets/logo.png';
+
 
 export const fetchProjects = async (): Promise<Project[]> => {
   await new Promise((resolve) => setTimeout(resolve, 300));
   return [
+    {
+      title: 'PAM Jaya Mobil Tangki SDD',
+      description: 'A comprehensive web-based monitoring, scheduling, and queue management system for PAM Jaya water tanker distribution (Sistem Distribusi & Delivery). Designed to optimize clean water dispatching with real-time assignment monitoring, monthly historical analytics, queue management, and automated trip planning.',
+      image: '/Mobil-Tangki-SDD_files/monitoring_case_delivered.png',
+      tags: ['React', 'TypeScript', 'Dashboard', 'Analytics', 'Queue Management', 'Real-time Tracking'],
+      github: 'https://github.com/arifhidayat65',
+      demo: '#',
+      category: 'Web',
+      images: [
+        '/Mobil-Tangki-SDD_files/monitoring_case_delivered.png',
+        '/Mobil-Tangki-SDD_files/pusta_daata_master_arsip_armada.png',
+        '/Mobil-Tangki-SDD_files/antrian_queque.png',
+        '/Mobil-Tangki-SDD_files/perencanaan_penugasan.png',
+        '/Mobil-Tangki-SDD_files/permintaan_pernecanaan1.png',
+        '/Mobil-Tangki-SDD_files/user_management.png',
+        '/Mobil-Tangki-SDD_files/add_new_trips.png',
+        '/Mobil-Tangki-SDD_files/create_new_event_agenda.png',
+        '/Mobil-Tangki-SDD_files/area_historikal_bulanan.png'
+      ]
+    },
+    {
+      title: 'PAM Jaya Mobile Driver',
+      description: 'An Android-based application designed for PAM Jaya field operations and drivers. Features real-time GPS tracking, task assignment management, and geotagged camera verification for water distribution and service reports.',
+      image: '/images/location_driver_live_tracking.png',
+      tags: ['Android', 'Kotlin', 'Google Maps API', 'Geotagging', 'SQLite', 'Retrofit'],
+      github: 'https://github.com/arifhidayat65',
+      demo: '#',
+      category: 'Mobile',
+      images: [
+        '/images/location_driver_live_tracking.png',
+        '/images/halaman_login_page.png',
+        '/images/trip_driver.png',
+        '/images/update_assignment.png',
+        '/images/mengambil_kamera_dengan_lokasi.png',
+        '/images/foto_pengiriman.png',
+        '/images/buat_pin_baru.png',
+        '/images/halaman_lupa_password.png',
+        '/images/kebijakan_privasi.png',
+        '/images/profil_saya.png',
+        '/images/pusat_bantuan.png',
+        '/images/tentang_aplikasi.png',
+        '/images/konfirmasi_lock_trip.png'
+      ]
+    },
     {
       title: 'Enigma Camp 2.0',
       description: 'Full online learning program completed with a more advanced combination of Self-paced learning, Instructor Led, and Collaborative learning methods.',
@@ -133,7 +177,7 @@ export const fetchEducation = async (): Promise<Education[]> => {
         "Quality",
         "Database"
       ],
-      image: mainLogo
+      image: '/unikom.webp'
     }
   ];
 };
@@ -146,7 +190,8 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
       role: 'Fullstack Developer',
       period: '2025 - 2026 (Present)',
       description: 'Leading the development of integrated utility management systems, focusing on modernizing public service platforms with robust Fullstack solutions. Implementing high-performance architectures to ensure seamless data flow and real-time monitoring of essential services.',
-      skills: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Docker', 'Cloud Services']
+      skills: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Docker', 'Cloud Services'],
+      image: '/Mobil-Tangki-SDD_files/logoMobilTangki.png'
     },
     {
       company: 'Bank Syariah Indonesia (BSI)',

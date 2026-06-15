@@ -5,7 +5,8 @@ export interface Project {
   tags: string[];
   github: string;
   demo: string;
-  category: 'Web' | 'Design';
+  category: 'Web' | 'Design' | 'Mobile';
+  images?: string[];
 }
 
 export interface Education {

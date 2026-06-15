@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { usePortfolioData } from '../../hooks/usePortfolioData';
 import './ExperienceSection.css';
 
@@ -9,15 +10,27 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Experiences.</h2>
-          <hr className="title-line" />
-        </div>
+        </motion.div>
 
         <div className="experience-content">
           <div className="experience-timeline">
             {experiences.map((exp, index) => (
-              <div key={index} className="timeline-item">
+              <motion.div 
+                key={index} 
+                className="timeline-item"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
                   <div className="experience-header">
@@ -35,7 +48,7 @@ const ExperienceSection = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

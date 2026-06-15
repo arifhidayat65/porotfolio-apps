@@ -8,7 +8,7 @@ const LoadingScreen: React.FC = () => {
         <div className="logo-loader">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <rect width="100" height="100" rx="20" fill="#669db3"/>
-            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="60" fill="white">A</text>
+            <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontFamily="Montserrat, Arial, sans-serif" fontWeight="800" fontSize="60" fill="white">A</text>
           </svg>
         </div>
         <div className="loading-bar-container">

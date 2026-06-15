@@ -1,59 +1,114 @@
 .skills {
-  padding: 4rem 1rem;
+  padding: 8rem 0;
+  background-color: var(--bg-alt);
 }
 
-.skills-grid {
+.skills-bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.skill-card {
-  background-color: var(--bg-main);
-  padding: 2rem;
-  border-radius: 12px;
+.skill-bento-card {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 2rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary);
+}
+
+.dev-group {
+  grid-column: span 2;
+  grid-row: span 1;
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-secondary) 100%);
+}
+
+.design-group {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.tools-group {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
 .group-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--text-main);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--primary);
-  display: inline-block;
-  padding-bottom: 0.25rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.skills-icons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-icon-item {
+.skills-flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  transition: transform 0.3s ease;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.skill-icon-item:hover {
-  transform: translateY(-5px);
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  transform: scale(1.05);
 }
 
 .skill-logo {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
 .skill-name {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .skills-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .design-group {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-group, .design-group, .tools-group {
+    grid-column: span 1;
+  }
+  
+  .skill-bento-card {
+    padding: 1.5rem;
+  }
+}
+
