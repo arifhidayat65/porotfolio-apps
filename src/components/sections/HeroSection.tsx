@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
-import { Download, Send } from 'lucide-react';
+import { Download, Send, Briefcase, Target, Users } from 'lucide-react';
 import Wave from '../ui/Wave';
 import arifImage from '../../assets/arif.png';
 import './HeroSection.css';
@@ -56,13 +56,26 @@ const HeroSection = () => {
             Arif <span>Hidayat</span>
           </motion.h1>
           <motion.div variants={itemVariants} className="hero-description-wrapper">
-            <p className="hero-description">
-              Software Engineering Graduate from University of Computer Indonesia. 
-              Specializing in <strong>Full-stack Web Development</strong> & <strong>Software Architecture</strong>.
-            </p>
-            <p className="hero-description secondary">
-              Passionate about creating clean, scalable, and user-centric digital experiences.
-            </p>
+            <div className="description-item">
+              <Briefcase className="description-icon" size={24} />
+              <p className="hero-description">
+                Dedicated <strong>Project Manager</strong> with a strong foundation in Software Engineering from University of Computer Indonesia.
+              </p>
+            </div>
+            
+            <div className="description-item">
+              <Target className="description-icon" size={24} />
+              <p className="hero-description">
+                Expert in overseeing the end-to-end lifecycle of complex projects, from <strong>Strategic Planning</strong> to <strong>System Architecture</strong>.
+              </p>
+            </div>
+
+            <div className="description-item">
+              <Users className="description-icon secondary" size={24} />
+              <p className="hero-description secondary">
+                Passionate about leading cross-functional teams, implementing <strong>Agile methodologies</strong>, and delivering high-quality digital experiences that drive growth.
+              </p>
+            </div>
           </motion.div>
           
           <motion.div variants={itemVariants} className="hero-social">
