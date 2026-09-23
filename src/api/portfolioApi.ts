@@ -1,4 +1,7 @@
-import type { Project, Experience, Education } from '../types';
+import type { Project, Experience, Education, Profile } from '../types';
+
+// Import profile assets
+import arifAvatar from '../assets/arif.png';
 
 // Import project images
 import enigmaLogo from '../assets/portfolio/enigmacamp.png';
@@ -8,11 +11,23 @@ import pilgrimLogo from '../assets/portfolio/pilgrim.png';
 
 // Import design images
 import keepItGreenLogo from '../assets/portfolio/Keep it green/cover.png';
+import keepItGreenShow from '../assets/portfolio/Keep it green/show.png';
+
 import digitalAgencyLogo from '../assets/portfolio/digital agency/behance cover.png';
-// import creditCardLogo from '../assets/portfolio/credit/behance cover.png';
+import digitalAgency1 from '../assets/portfolio/digital agency/1. start.png';
+import digitalAgency2 from '../assets/portfolio/digital agency/2. about.png';
+import digitalAgency3 from '../assets/portfolio/digital agency/3. Our services.png';
+import digitalAgency4 from '../assets/portfolio/digital agency/4. latest project.png';
+import digitalAgency5 from '../assets/portfolio/digital agency/5. Contact us.png';
+
 import booksiLogo from '../assets/portfolio/booksi/behance cover.png';
+import booksiHome from '../assets/portfolio/booksi/home page.png';
+import booksiLogin from '../assets/portfolio/booksi/login.png';
+import booksiRegister from '../assets/portfolio/booksi/register.png';
+import booksiForYou from '../assets/portfolio/booksi/For you.png';
+import booksiBoard from '../assets/portfolio/booksi/behance board.png';
+
 import weatherLogo from '../assets/portfolio/weather/Wooden Hand iPhone 12 Pro.png';
-// import pillLogo from '../assets/portfolio/pill reminder/Web 1.png';
 
 // Import skill images
 import bootstrapImg from '../assets/skills/bootstrap.png';
@@ -32,7 +47,29 @@ import reactImg from '../assets/skills/react.png';
 import vuejsImg from '../assets/skills/vuejs.png';
 import xdImg from '../assets/skills/xd.png';
 
-
+export const fetchProfile = async (): Promise<Profile> => {
+  await new Promise((resolve) => setTimeout(resolve, 300));
+  return {
+    firstName: 'Arif',
+    lastName: 'Hidayat',
+    role: 'Lead Software Engineer',
+    email: 'arifhidayat1010@gmail.com',
+    location: 'Jakarta, Indonesia',
+    avatar: arifAvatar,
+    cvUrl: '/RESUME.html',
+    description: [
+      'Lead Software Engineer and Software Architect with 7+ years building systems for finance, insurance, and public utilities.',
+      'I turn complex requirements into software that meets business goals. I take products from idea to production: microservices for high load, banking systems that meet security standards, logistics platforms that track in real time.',
+      'I run Agile teams, ship on schedule, and help engineers grow.'
+    ],
+    socials: [
+      { platform: 'linkedin', url: 'https://www.linkedin.com/in/arif-hidayat-8b173212b/' },
+      { platform: 'github', url: 'https://github.com/arifhidayat65' },
+      { platform: 'twitter', url: 'https://twitter.com/Arifhidayat65' },
+      { platform: 'facebook', url: 'https://www.facebook.com/arifefhidayat/' }
+    ]
+  };
+};
 
 export const fetchProjects = async (): Promise<Project[]> => {
   await new Promise((resolve) => setTimeout(resolve, 300));
@@ -106,7 +143,11 @@ export const fetchProjects = async (): Promise<Project[]> => {
       tags: ['Figma', 'Photoshop', 'UI/UX'],
       github: '',
       demo: '#',
-      category: 'Design'
+      category: 'Design',
+      images: [
+        keepItGreenLogo,
+        keepItGreenShow
+      ]
     },
     {
       title: 'Digital Agency',
@@ -115,7 +156,15 @@ export const fetchProjects = async (): Promise<Project[]> => {
       tags: ['Figma', 'Illustrator', 'UI/UX'],
       github: '',
       demo: '#',
-      category: 'Design'
+      category: 'Design',
+      images: [
+        digitalAgencyLogo,
+        digitalAgency1,
+        digitalAgency2,
+        digitalAgency3,
+        digitalAgency4,
+        digitalAgency5
+      ]
     },
     {
       title: 'Backoffice Enigmacamp',
@@ -133,7 +182,15 @@ export const fetchProjects = async (): Promise<Project[]> => {
       tags: ['Figma', 'Photoshop', 'Mobile Design'],
       github: '',
       demo: '#',
-      category: 'Design'
+      category: 'Design',
+      images: [
+        booksiLogo,
+        booksiHome,
+        booksiLogin,
+        booksiRegister,
+        booksiForYou,
+        booksiBoard
+      ]
     },
     {
       title: 'The Pilgrim App',
@@ -187,48 +244,47 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
   return [
     {
       company: 'PT Pam Jaya',
-      role: 'Fullstack Developer',
-      period: '2025 - 2026 (Present)',
-      description: 'Leading the development of integrated utility management systems, focusing on modernizing public service platforms with robust Fullstack solutions. Implementing high-performance architectures to ensure seamless data flow and real-time monitoring of essential services.',
-      skills: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Docker', 'Cloud Services'],
+      role: 'Lead Software Engineer',
+      period: 'Jan 2025 – Oct 2026 (End of Contract)',
+      description: 'Led Jakarta water utility digital upgrade. Contract ended Oct 2026. Shipped systems for real-time water distribution and tanker logistics. Aligned architecture with ops needs, held 99.9% uptime, and sped up deploys with CI/CD.',
+      skills: ['Technical Leadership', 'System Architecture', 'CI/CD', 'Cloud Infrastructure', 'React', 'Node.js'],
       image: '/Mobil-Tangki-SDD_files/logoMobilTangki.png'
     },
     {
       company: 'Bank Syariah Indonesia (BSI)',
-      role: 'Software Engineer',
+      role: 'Lead Software Engineer',
       period: '2023 - 2024',
-      description: 'Developed and maintained core banking web applications with a focus on high security and compliance with Sharia banking regulations. Optimized internal financial systems and enhanced customer-facing digital services for better reliability and performance.',
-      skills: ['Python', 'Django', 'PostgreSQL', 'JQuery', 'Security Best Practices', 'CI/CD'],
+      description: 'Owned core digital assets for Indonesia’s largest Sharia bank. Built high-traffic portals, met Sharia and OJK compliance 100%, rebuilt transaction engines for lower latency, mentored 15+ developers.',
+      skills: ['Team Leadership', 'Python', 'Django', 'Security Compliance', 'Database Optimization', 'Banking Systems'],
       image: bsiLogo
     },
     {
       company: 'PT Bank Sinarmas MSIGLIFE',
-      role: 'Backend Developer',
+      role: 'Senior Backend Developer',
       period: 'Jan 2021 - Des 2022',
-      description: 'Part of team to create technically Service RestApi, management server, and Quality Code.',
-      skills: ['Java', 'Springboot', 'Oracle', 'Agile', 'Microservices', 'CI/CD']
+      description: 'Built core backend for a life insurer (JV with MSIG Japan). Broke a monolith into Spring Boot microservices, integrated partner APIs for real-time policy issuance, hardened data security.',
+      skills: ['Microservices', 'Java', 'Springboot', 'Oracle', 'API Management', 'Quality Engineering']
     },
     {
       company: 'PT Enigmacamp Cipta Humanika',
-      role: 'Backend & Front Engineer',
+      role: 'Technical Lead & Backend Specialist',
       period: 'Jun 2019 - Sep 2021',
-      description: 'Creating apps and web UI, portal backoffice.',
-      skills: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'],
-      image: enigmaLogo
+      description: 'Ran technical delivery for an IT incubator. Owned client project lifecycles, built Enigma Camp 2.0 LMS for thousands of concurrent students, standardized backend workflows and lifted output 30%.',
+      skills: ['Project Management', 'Backend Development', 'Technical Mentoring', 'Architecture Design']
     },
     {
       company: 'Indocyber Global Service',
-      role: 'React Web Developer',
+      role: 'Fullstack Web Developer',
       period: 'Jan 2018 - Des 2019',
-      description: 'Worked as a fullstack developer solving front-end and back-end issues.',
-      skills: ['Javascript', 'Typescript', 'ReactJS', 'React-Redux', 'webpack', 'Flutter', 'Java']
+      description: 'Shipped web products for FMCG and finance clients with React and Java. Built responsive interfaces backed by solid logic.',
+      skills: ['Fullstack Development', 'ReactJS', 'TypeScript', 'Flutter', 'Java', 'Redux']
     },
     {
       company: 'Walden Global Service',
-      role: 'Laravel Php',
+      role: 'Backend Engineer (PHP/Laravel)',
       period: 'Jan 2017 - Des 2018',
-      description: 'Created apps with microservice laravel php and managed server.',
-      skills: ['HTML5', 'CSS3', 'Bootstrap', 'JQuery', 'VueJS']
+      description: 'Built and ran high-concurrency Laravel apps. Tuned databases and servers to handle peak e-commerce traffic.',
+      skills: ['Laravel', 'PHP', 'MySQL', 'Server Management', 'VueJS']
     }
   ];
 };

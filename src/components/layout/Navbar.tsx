@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 import './Navbar.css';
 
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, setMenuOpen, theme, setTheme } = useAppStore();
   const [scrolled, setScrolled] = React.useState(false);
+  const { profile } = usePortfolioData();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#home" className="logo">
           <img src="/favicon.svg" alt="Logo" className="nav-logo-img" />
-          <span>Arif Hidayat</span>
+          <span>{profile ? `${profile.firstName} ${profile.lastName}` : 'Arif Hidayat'}</span>
         </a>
         
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>

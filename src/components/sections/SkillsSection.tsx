@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
+import { Code2, Palette, Terminal } from 'lucide-react';
 import { skillAssets } from '../../api/portfolioApi';
 import './SkillsSection.css';
 
 const skillGroups = [
   {
     title: 'Development',
+    icon: <Code2 size={24} />,
     className: 'dev-group',
     skills: [
       { name: 'Python', icon: skillAssets.python },
@@ -19,6 +21,7 @@ const skillGroups = [
   },
   {
     title: 'Design',
+    icon: <Palette size={24} />,
     className: 'design-group',
     skills: [
       { name: 'Figma', icon: skillAssets.figma },
@@ -29,6 +32,7 @@ const skillGroups = [
   },
   {
     title: 'Core & Tools',
+    icon: <Terminal size={24} />,
     className: 'tools-group',
     skills: [
       { name: 'HTML5', icon: skillAssets.html },
@@ -83,7 +87,10 @@ const SkillsSection = () => {
               className={`skill-bento-card ${group.className}`}
               variants={itemVariants}
             >
-              <h3 className="group-title">{group.title}</h3>
+              <h3 className="group-title">
+                <span className="group-icon-wrapper">{group.icon}</span>
+                {group.title}
+              </h3>
               <div className="skills-flex">
                 {group.skills.map((skill, sIdx) => skill.icon && (
                   <div key={sIdx} className="skill-badge" title={skill.name}>

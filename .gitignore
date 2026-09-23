@@ -1,3 +1,40 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+# keep lockfiles committed (uncomment to ignore if needed)
+# package-lock.json
+# bun.lock
+# yarn.lock
+# pnpm-lock.yaml
+
+# Build outputs
+dist
+dist-ssr
+build
+out
+.next
+.vercel
+lib
+*.tsbuildinfo
+
+# Vite / caches
+.vite
+.cache
+.parcel-cache
+.turbo
+.eslintcache
+.stylelintcache
+coverage
+.nyc_output
+
+# Environment — never commit secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
 # Logs
 logs
 *.log
@@ -7,18 +44,51 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
 
-# Editor directories and files
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# Temporary & local files
+*.local
+*.tmp
+*.temp
+.temp/
+tmp/
+temp/
+
+# Deployment
+.netlify
+.vercel
+
+# Generated artifacts
+.codegraph
+visual-qa/
+graphify-out/
+
+# Misc
+.cache/

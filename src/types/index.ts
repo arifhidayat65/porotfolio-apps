@@ -1,3 +1,20 @@
+export interface SocialLink {
+  platform: 'linkedin' | 'github' | 'twitter' | 'facebook' | 'instagram' | 'email';
+  url: string;
+}
+
+export interface Profile {
+  firstName: string;
+  lastName: string;
+  role: string;
+  description: string[];
+  email: string;
+  location: string;
+  avatar: string;
+  socials: SocialLink[];
+  cvUrl: string;
+}
+
 export interface Project {
   title: string;
   description: string;

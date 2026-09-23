@@ -1,11 +1,15 @@
 import { motion, type Variants } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { Download, Send, Briefcase, Target, Users } from 'lucide-react';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 import Wave from '../ui/Wave';
-import arifImage from '../../assets/arif.png';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const { profile } = usePortfolioData();
+
+  if (!profile) return null;
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -22,14 +26,24 @@ const HeroSection = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
+  };
+
+  const getSocialIcon = (platform: string) => {
+    switch (platform) {
+      case 'linkedin': return <FaLinkedin size={20} />;
+      case 'github': return <FaGithub size={20} />;
+      case 'twitter': return <FaTwitter size={20} />;
+      case 'facebook': return <FaFacebook size={20} />;
+      default: return null;
+    }
   };
 
   return (
     <section id="home" className="hero">
       <div className="container hero-container">
-        <motion.div 
+        <motion.div
           className="hero-visual"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -37,7 +51,7 @@ const HeroSection = () => {
         >
           <div className="profile-wrapper">
             <div className="profile-blob"></div>
-            <img src={arifImage} alt="Arif Hidayat" className="profile-img" />
+            <img src={profile.avatar} alt={`${profile.firstName} ${profile.lastName}`} className="profile-img" />
             <div className="status-badge">
               <span className="pulse"></span>
               Available for Hire
@@ -45,7 +59,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="hero-content"
           variants={containerVariants}
           initial="hidden"
@@ -53,40 +67,47 @@ const HeroSection = () => {
         >
           <motion.h2 variants={itemVariants} className="hero-subtitle">Hello, I'm</motion.h2>
           <motion.h1 variants={itemVariants} className="hero-title">
-            Arif <span>Hidayat</span>
+            {profile.firstName} <span>{profile.lastName}</span>
           </motion.h1>
           <motion.div variants={itemVariants} className="hero-description-wrapper">
             <div className="description-item">
-              <Briefcase className="description-icon" size={24} />
+              <div className="description-icon">
+                <Briefcase size={22} />
+              </div>
               <p className="hero-description">
-                Dedicated <strong>Project Manager</strong> with a strong foundation in Software Engineering from University of Computer Indonesia.
-              </p>
-            </div>
-            
-            <div className="description-item">
-              <Target className="description-icon" size={24} />
-              <p className="hero-description">
-                Expert in overseeing the end-to-end lifecycle of complex projects, from <strong>Strategic Planning</strong> to <strong>System Architecture</strong>.
+                Lead Software Engineer with a strong foundation in Software Engineering and Architecture.
               </p>
             </div>
 
             <div className="description-item">
-              <Users className="description-icon secondary" size={24} />
-              <p className="hero-description secondary">
-                Passionate about leading cross-functional teams, implementing <strong>Agile methodologies</strong>, and delivering high-quality digital experiences that drive growth.
+              <div className="description-icon secondary">
+                <Target size={22} />
+              </div>
+              <p className="hero-description">
+                Bridging the gap between <strong>Business Vision</strong> and <strong>Technical Execution</strong>.
+              </p>
+            </div>
+
+            <div className="description-item">
+              <div className="description-icon tertiary">
+                <Users size={22} />
+              </div>
+              <p className="hero-description">
+                Passionate about <strong>Mentoring Teams</strong> and delivering high-quality digital experiences.
               </p>
             </div>
           </motion.div>
-          
+
           <motion.div variants={itemVariants} className="hero-social">
-            <a href="https://www.linkedin.com/in/arif-hidayat-8b173212b/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaLinkedin size={20} /></a>
-            <a href="https://github.com/arifhidayat65" target="_blank" rel="noopener noreferrer" className="social-btn"><FaGithub size={20} /></a>
-            <a href="https://twitter.com/Arifhidayat65" target="_blank" rel="noopener noreferrer" className="social-btn"><FaTwitter size={20} /></a>
-            <a href="https://www.facebook.com/arifefhidayat/" target="_blank" rel="noopener noreferrer" className="social-btn"><FaFacebook size={20} /></a>
+            {profile.socials.map((social, index) => (
+              <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="social-btn" title={social.platform}>
+                {getSocialIcon(social.platform)}
+              </a>
+            ))}
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-actions">
-            <a href="#" className="btn btn-primary">
+            <a href={profile.cvUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <Download size={18} /> Download CV
             </a>
             <a href="#contact" className="btn btn-outline">

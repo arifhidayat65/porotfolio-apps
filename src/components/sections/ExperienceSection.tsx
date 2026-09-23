@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Building2, Calendar } from 'lucide-react';
 import { usePortfolioData } from '../../hooks/usePortfolioData';
 import './ExperienceSection.css';
 
@@ -34,9 +35,15 @@ const ExperienceSection = () => {
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
                   <div className="experience-header">
-                    {exp.image && <img src={exp.image} alt={exp.company} className="company-logo" />}
+                    {exp.image ? (
+                      <img src={exp.image} alt={exp.company} className="company-logo" />
+                    ) : (
+                      <div className="company-logo-placeholder">
+                        <Building2 size={30} />
+                      </div>
+                    )}
                     <div className="experience-info">
-                      <span className="period">{exp.period}</span>
+                      <span className="period"><Calendar size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} /> {exp.period}</span>
                       <h4 className="title">{exp.role}</h4>
                       <h5 className="place">{exp.company}</h5>
                     </div>

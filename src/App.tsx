@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { useAppStore } from './store/useAppStore';
+import { usePortfolioData } from './hooks/usePortfolioData';
 import Navbar from './components/layout/Navbar';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
@@ -23,10 +25,11 @@ const queryClient = new QueryClient({
   },
 });
 
-function App() {
+function AppContent() {
   const { theme, setTheme } = useAppStore();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingScreen, setIsLoadingScreen] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const { profile, isLoading } = usePortfolioData();
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -37,7 +40,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false);
+      setIsLoadingScreen(false);
     }, 1200);
 
     const handleScroll = () => {
@@ -63,50 +66,82 @@ function App() {
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
-  if (isLoading) {
+  if (isLoadingScreen || isLoading) {
     return <LoadingScreen />;
   }
 
+  const getSocialIcon = (platform: string) => {
+    switch (platform) {
+      case 'linkedin': return <FaLinkedin size={20} />;
+      case 'github': return <FaGithub size={20} />;
+      case 'twitter': return <FaTwitter size={20} />;
+      case 'facebook': return <FaFacebook size={20} />;
+      default: return null;
+    }
+  };
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="app">
-        <motion.div className="scroll-progress" style={{ scaleX }} />
-        <Navbar />
-        <main>
-          <HeroSection />
-          <AboutSection />
-          <ExperienceSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
-        </main>
-        
-        <footer className="footer">
-          <div className="container">
-            <div className="footer-content">
-              <p>© {new Date().getFullYear()} Arif Hidayat. Built with Passion.</p>
-              <div className="footer-links">
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+    <div className="app">
+      <motion.div className="scroll-progress" style={{ scaleX }} />
+      <Navbar />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-info">
+              <p>© {new Date().getFullYear()} {profile?.firstName} {profile?.lastName}. Built with Passion.</p>
+              <div className="footer-social">
+                {profile?.socials.map((social, index) => (
+                  <a 
+                    key={index} 
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    title={social.platform}
+                    className="footer-social-link"
+                  >
+                    {getSocialIcon(social.platform)}
+                  </a>
+                ))}
               </div>
             </div>
+            <div className="footer-links">
+              <a href="#home">Home</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </div>
           </div>
-        </footer>
+        </div>
+      </footer>
 
-        {showBackToTop && (
-          <motion.button 
-            className="back-to-top"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <ChevronUp size={24} />
-          </motion.button>
-        )}
-      </div>
+      {showBackToTop && (
+        <motion.button 
+          className="back-to-top"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <ChevronUp size={24} />
+        </motion.button>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppContent />
     </QueryClientProvider>
   );
 }
