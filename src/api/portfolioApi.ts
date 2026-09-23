@@ -76,7 +76,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
   return [
     {
       title: 'PAM Jaya Mobil Tangki SDD',
-      description: 'A comprehensive web-based monitoring, scheduling, and queue management system for PAM Jaya water tanker distribution (Sistem Distribusi & Delivery). Designed to optimize clean water dispatching with real-time assignment monitoring, monthly historical analytics, queue management, and automated trip planning.',
+      description: 'Web system for PAM Jaya water-tanker dispatch. You monitor assignments live, manage queues, auto-plan trips, and review monthly history.',
       image: '/Mobil-Tangki-SDD_files/monitoring_case_delivered.png',
       tags: ['React', 'TypeScript', 'Dashboard', 'Analytics', 'Queue Management', 'Real-time Tracking'],
       github: 'https://github.com/arifhidayat65',
@@ -96,7 +96,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'PAM Jaya Mobile Driver',
-      description: 'An Android-based application designed for PAM Jaya field operations and drivers. Features real-time GPS tracking, task assignment management, and geotagged camera verification for water distribution and service reports.',
+      description: 'Android app for PAM Jaya drivers. Drivers get live GPS, task updates, and geotagged photos to verify each water delivery.',
       image: '/images/location_driver_live_tracking.png',
       tags: ['Android', 'Kotlin', 'Google Maps API', 'Geotagging', 'SQLite', 'Retrofit'],
       github: 'https://github.com/arifhidayat65',
@@ -120,7 +120,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Enigma Camp 2.0',
-      description: 'Full online learning program completed with a more advanced combination of Self-paced learning, Instructor Led, and Collaborative learning methods.',
+      description: 'Learning platform for Enigma Camp. Students work self-paced, join live instructor sessions, and collaborate on projects.',
       image: enigmaLogo,
       tags: ['Java', 'Android', 'SQlite', 'Vue'],
       github: 'https://github.com/arifhidayat65',
@@ -129,7 +129,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Bank BSI',
-      description: 'The first Islamic bank website in Indonesia. Implemented a security system to prevent data leakage.',
+      description: 'Website for Indonesia’s first Islamic bank. I built the frontend and backend and locked down data leaks with layered security.',
       image: bsiLogo,
       tags: ['Python', 'Django', 'JQuery', 'Postgres', 'Docker', 'CI/CD'],
       github: 'https://github.com/arifhidayat65',
@@ -138,7 +138,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Keep it Green',
-      description: 'UI/UX Design for an environment-focused application. Moodboard and visual design.',
+      description: 'UI/UX for an eco app. I set the moodboard, color system, and screens to make recycling feel simple.',
       image: keepItGreenLogo,
       tags: ['Figma', 'Photoshop', 'UI/UX'],
       github: '',
@@ -151,7 +151,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Digital Agency',
-      description: 'Complete website design for a digital agency. Including about, services, and contact pages.',
+      description: 'Marketing site for a digital agency. Home, about, services, projects, and contact — one visual system.',
       image: digitalAgencyLogo,
       tags: ['Figma', 'Illustrator', 'UI/UX'],
       github: '',
@@ -168,7 +168,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Backoffice Enigmacamp',
-      description: 'Project that aims to help beginner programmers with logic and algorithms on a web platform.',
+      description: 'Web platform where beginners practice logic and algorithms with guided exercises and instant feedback.',
       image: backofficeLogo,
       tags: ['Angular', 'Mysql', 'Postgres', 'CI/CD'],
       github: 'https://github.com/arifhidayat65',
@@ -177,7 +177,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'BOOKSI',
-      description: 'E-Book library Android app design for easy reading.',
+      description: 'Android e-book library. You browse, save, and read — layout prioritizes legibility on small screens.',
       image: booksiLogo,
       tags: ['Figma', 'Photoshop', 'Mobile Design'],
       github: '',
@@ -194,7 +194,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'The Pilgrim App',
-      description: 'Christian content system like ebooks, audiobooks, courses and articles. With e-commerce for purchases.',
+      description: 'Content and commerce for a Christian library. You find ebooks, audiobooks, courses, and articles, then buy in one checkout.',
       image: pilgrimLogo,
       tags: ['Python', 'Django', 'Postgres', 'Cassandra', 'AWS', 'CI/CD', 'Firebase'],
       github: 'https://github.com/arifhidayat65',
@@ -203,7 +203,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Quiet Weather',
-      description: 'React Native app design using OpenWeatherMap API.',
+      description: 'Weather app design on React Native. You check the forecast from OpenWeatherMap without clutter.',
       image: weatherLogo,
       tags: ['Figma', 'Illustration', 'React Native'],
       github: '',

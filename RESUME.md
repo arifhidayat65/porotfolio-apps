@@ -74,7 +74,7 @@ Karawang, Indonesia | [Website Portofolio](https://portofolio-arifhidayat.netlif
 ---
 
 ## KEY PROJECTS
-*   **PAM Jaya Mobil Tangki SDD:** Enterprise fleet and queue management system with real-time scheduling and inventory tracking.
-*   **PAM Jaya Mobile Driver:** Mission-critical Android application featuring real-time GPS tracking and offline-first data sync.
-*   **Bank BSI Digital Portal:** Flagship banking portal with high-security standards and high-concurrency architecture.
-*   **Enigma Camp 2.0 (LMS):** Scalable, multi-tenant LMS for enterprise-scale IT training management.
+*   **PAM Jaya Mobil Tangki SDD:** Water-tanker dispatch for PAM Jaya. You monitor assignments live, manage queues, and track inventory.
+*   **PAM Jaya Mobile Driver:** Android app for PAM Jaya drivers. Live GPS, geotagged photos, and offline sync verify each delivery.
+*   **Bank BSI Digital Portal:** Portal for Indonesia's largest Sharia bank. I secured it and tuned it for high traffic.
+*   **Enigma Camp 2.0 (LMS):** Training platform for Enigma Camp. It handles thousands of concurrent students and their evaluations.

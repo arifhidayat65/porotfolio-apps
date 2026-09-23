@@ -47,7 +47,7 @@ const ContactSection = () => {
         <div className="contact-grid">
           <div className="contact-info-side">
             <h3 className="sub-title">Contact Information</h3>
-            <p className="contact-desc">Feel free to reach out for collaborations or just a friendly hello!</p>
+            <p className="contact-desc">Reach out for collaborations or questions.</p>
             
             <div className="info-list">
               <div className="info-item">

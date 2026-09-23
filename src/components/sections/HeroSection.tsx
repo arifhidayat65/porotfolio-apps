@@ -75,7 +75,7 @@ const HeroSection = () => {
                 <Briefcase size={22} />
               </div>
               <p className="hero-description">
-                Lead Software Engineer with a strong foundation in Software Engineering and Architecture.
+                Lead Software Engineer. I design and ship systems for finance, insurance, and public utilities.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ const HeroSection = () => {
                 <Target size={22} />
               </div>
               <p className="hero-description">
-                Bridging the gap between <strong>Business Vision</strong> and <strong>Technical Execution</strong>.
+                I align <strong>Business Goals</strong> with <strong>Technical Delivery</strong>.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ const HeroSection = () => {
                 <Users size={22} />
               </div>
               <p className="hero-description">
-                Passionate about <strong>Mentoring Teams</strong> and delivering high-quality digital experiences.
+                I lead teams and ship products people use.
               </p>
             </div>
           </motion.div>
