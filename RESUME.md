@@ -1,7 +1,7 @@
 # ARIF HIDAYAT
 **Lead Software Engineer**  
-Karawang, Indonesia | [Website Portofolio](https://portofolio-arifhidayat.netlify.app/)  
-[LinkedIn](https://www.linkedin.com/in/arif-hidayat-8b173212b/) | [GitHub](https://github.com/arifhidayat65)
+Karawang, Indonesia | [https://portofolio-arifhidayat.netlify.app](https://portofolio-arifhidayat.netlify.app)  
+[https://www.linkedin.com/in/arif-hidayat-8b173212b](https://www.linkedin.com/in/arif-hidayat-8b173212b) | [https://github.com/arifhidayat65](https://github.com/arifhidayat65)
 
 ---
 
@@ -52,7 +52,7 @@ Karawang, Indonesia | [Website Portofolio](https://portofolio-arifhidayat.netlif
 *   Standardized backend workflows. Lifted developer output 30%.
 *   **Skills:** Project Management, Backend Development, Technical Mentoring, Architecture Design.
 
-### **Indocyber Global Service** | Fullstack Web Developer
+### **Bank Permata** | Fullstack Web Developer
 *Jan 2018 – Dec 2019*
 *   Shipped web products for FMCG and finance clients with React and Java.
 *   Worked across design and backend to build responsive interfaces backed by solid logic.

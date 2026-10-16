@@ -23,6 +23,7 @@ const Navbar = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Resume', href: '/resume' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -37,7 +38,13 @@ const Navbar = () => {
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} onClick={() => setMenuOpen(false)}>{link.name}</a>
+              <a 
+                href={link.href} 
+                onClick={() => setMenuOpen(false)}
+                {...(link.href.startsWith('/resume') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>

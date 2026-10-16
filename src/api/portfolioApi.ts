@@ -273,7 +273,7 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
       skills: ['Project Management', 'Backend Development', 'Technical Mentoring', 'Architecture Design']
     },
     {
-      company: 'Indocyber Global Service',
+      company: 'Bank Permata',
       role: 'Fullstack Web Developer',
       period: 'Jan 2018 - Des 2019',
       description: 'Shipped web products for FMCG and finance clients with React and Java. Built responsive interfaces backed by solid logic.',

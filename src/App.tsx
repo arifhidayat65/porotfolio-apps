@@ -116,6 +116,7 @@ function AppContent() {
             <div className="footer-links">
               <a href="#home">Home</a>
               <a href="#projects">Projects</a>
+              <a href="/resume" target="_blank" rel="noopener noreferrer">Resume</a>
               <a href="#contact">Contact</a>
             </div>
           </div>
