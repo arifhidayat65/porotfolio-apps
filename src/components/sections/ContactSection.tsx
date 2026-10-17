@@ -21,7 +21,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const toEmail = profile?.email || 'arifhidayat1010@gmail.com';
+    const toEmail = profile?.email || 'arif.hidayat@aigen-global.com';
 
     // If EmailJS keys are not configured, never fake a success message —
     // open the visitor's email client with the message pre-filled instead.
@@ -91,7 +91,7 @@ const ContactSection = () => {
                 </div>
                 <div className="info-details">
                   <h4>Email</h4>
-                  <p><a href={`mailto:${profile?.email}`}>{profile?.email || 'arifhidayat1010@gmail.com'}</a></p>
+                  <p><a href={`mailto:${profile?.email}`}>{profile?.email || 'arif.hidayat@aigen-global.com'}</a></p>
                 </div>
               </div>
 

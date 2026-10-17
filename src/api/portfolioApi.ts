@@ -53,7 +53,7 @@ export const fetchProfile = async (): Promise<Profile> => {
     firstName: 'Arif',
     lastName: 'Hidayat',
     role: 'Lead Software Engineer',
-    email: 'arifhidayat1010@gmail.com',
+    email: 'arif.hidayat@aigen-global.com',
     location: 'Jakarta, Indonesia (UTC+7)',
     avatar: arifAvatar,
     cvUrl: '/RESUME.pdf',
