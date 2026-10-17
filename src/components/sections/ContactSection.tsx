@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Globe } from 'lucide-react';
 import { usePortfolioData } from '../../hooks/usePortfolioData';
 import './ContactSection.css';
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+
+const isEmailJsConfigured = Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY);
 
 const ContactSection = () => {
   const { profile } = usePortfolioData();
@@ -12,10 +19,19 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simulate sending with SweetAlert
+    const toEmail = profile?.email || 'arifhidayat1010@gmail.com';
+
+    // If EmailJS keys are not configured, never fake a success message —
+    // open the visitor's email client with the message pre-filled instead.
+    if (!isEmailJsConfigured) {
+      const subject = encodeURIComponent(`Portfolio inquiry from ${formData.name}`);
+      const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name} (${formData.email})`);
+      window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+      return;
+    }
+
     Swal.fire({
       title: 'Sending...',
       text: 'Please wait while we deliver your message',
@@ -25,16 +41,35 @@ const ContactSection = () => {
       }
     });
 
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID as string,
+        EMAILJS_TEMPLATE_ID as string,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: toEmail
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY as string }
+      );
+
       Swal.fire({
         icon: 'success',
         title: 'Message Sent!',
-        text: `Thanks, ${profile?.firstName || 'Arif'} ${profile?.lastName || 'Hidayat'} will get back to you soon.`,
+        text: `Thanks, ${formData.name}. ${profile?.firstName || 'Arif'} will get back to you soon.`,
         confirmButtonColor: '#4f46e5',
         timer: 3000
       });
       setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    } catch {
+      Swal.fire({
+        icon: 'error',
+        title: 'Could not send your message',
+        text: `Please try again, or email ${toEmail} directly.`,
+        confirmButtonColor: '#4f46e5'
+      });
+    }
   };
 
   return (
@@ -66,7 +101,17 @@ const ContactSection = () => {
                 </div>
                 <div className="info-details">
                   <h4>Location</h4>
-                  <p>{profile?.location || 'Karawang, Indonesia'}</p>
+                  <p>{profile?.location || 'Jakarta, Indonesia (UTC+7)'}</p>
+                </div>
+              </div>
+
+              <div className="info-item">
+                <div className="info-icon-wrapper tertiary">
+                  <Globe size={22} />
+                </div>
+                <div className="info-details">
+                  <h4>Availability</h4>
+                  <p>Remote · B2B contractor or EOR</p>
                 </div>
               </div>
             </div>

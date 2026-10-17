@@ -54,13 +54,13 @@ export const fetchProfile = async (): Promise<Profile> => {
     lastName: 'Hidayat',
     role: 'Lead Software Engineer',
     email: 'arifhidayat1010@gmail.com',
-    location: 'Jakarta, Indonesia',
+    location: 'Jakarta, Indonesia (UTC+7)',
     avatar: arifAvatar,
-    cvUrl: '/RESUME.html',
+    cvUrl: '/RESUME.pdf',
     description: [
-      'Lead Software Engineer and Software Architect with 7+ years building systems for finance, insurance, and public utilities.',
+      'Lead Software Engineer and Software Architect with 9+ years building systems for finance, insurance, and public utilities.',
       'I turn complex requirements into software that meets business goals. I take products from idea to production: microservices for high load, banking systems that meet security standards, logistics platforms that track in real time.',
-      'I run Agile teams, ship on schedule, and help engineers grow.'
+      'I run Agile teams, ship on schedule, and help engineers grow. I work async-first across time zones and keep overlap hours with teams in Europe, the Gulf, and Asia-Pacific.'
     ],
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/arif-hidayat-8b173212b/' },
@@ -76,7 +76,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
   return [
     {
       title: 'PAM Jaya Mobil Tangki SDD',
-      description: 'Web system for PAM Jaya water-tanker dispatch. You monitor assignments live, manage queues, auto-plan trips, and review monthly history.',
+      description: 'Real-time dispatch platform for PAM Jaya water tankers: live assignment monitoring, queue management, auto trip planning, and monthly history reporting.',
       image: '/Mobil-Tangki-SDD_files/monitoring_case_delivered.png',
       tags: ['React', 'TypeScript', 'Dashboard', 'Analytics', 'Queue Management', 'Real-time Tracking'],
       github: 'https://github.com/arifhidayat65',
@@ -96,7 +96,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'PAM Jaya Mobile Driver',
-      description: 'Android app for PAM Jaya drivers. Drivers get live GPS, task updates, and geotagged photos to verify each water delivery.',
+      description: 'Android app for PAM Jaya drivers: live GPS tracking, task updates, and geotagged photo proof for every water delivery.',
       image: '/images/location_driver_live_tracking.png',
       tags: ['Android', 'Kotlin', 'Google Maps API', 'Geotagging', 'SQLite', 'Retrofit'],
       github: 'https://github.com/arifhidayat65',
@@ -120,16 +120,16 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Enigma Camp 2.0',
-      description: 'Learning platform for Enigma Camp. Students work self-paced, join live instructor sessions, and collaborate on projects.',
+      description: 'Learning platform for Enigma Camp: self-paced tracks, live instructor sessions, and project collaboration at scale.',
       image: enigmaLogo,
-      tags: ['Java', 'Android', 'SQlite', 'Vue'],
+      tags: ['Java', 'Android', 'SQLite', 'Vue'],
       github: 'https://github.com/arifhidayat65',
       demo: 'https://enigmacamp.com/',
       category: 'Web'
     },
     {
       title: 'Bank BSI',
-      description: 'Website for Indonesia’s first Islamic bank. I built the frontend and backend and locked down data leaks with layered security.',
+      description: 'Digital portal for Indonesia’s largest Sharia bank: frontend, backend, and layered security for sensitive customer data.',
       image: bsiLogo,
       tags: ['Python', 'Django', 'JQuery', 'Postgres', 'Docker', 'CI/CD'],
       github: 'https://github.com/arifhidayat65',
@@ -138,7 +138,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Keep it Green',
-      description: 'UI/UX for an eco app. I set the moodboard, color system, and screens to make recycling feel simple.',
+      description: 'UI/UX design for a recycling app: moodboard, color system, and clean screens that make recycling feel simple.',
       image: keepItGreenLogo,
       tags: ['Figma', 'Photoshop', 'UI/UX'],
       github: '',
@@ -151,7 +151,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Digital Agency',
-      description: 'Marketing site for a digital agency. Home, about, services, projects, and contact — one visual system.',
+      description: 'Marketing site for a digital agency: home, about, services, projects, and contact in one visual system.',
       image: digitalAgencyLogo,
       tags: ['Figma', 'Illustrator', 'UI/UX'],
       github: '',
@@ -177,7 +177,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'BOOKSI',
-      description: 'Android e-book library. You browse, save, and read — layout prioritizes legibility on small screens.',
+      description: 'Android e-book library design: browse, save, and read with a layout optimized for legibility on small screens.',
       image: booksiLogo,
       tags: ['Figma', 'Photoshop', 'Mobile Design'],
       github: '',
@@ -194,7 +194,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'The Pilgrim App',
-      description: 'Content and commerce for a Christian library. You find ebooks, audiobooks, courses, and articles, then buy in one checkout.',
+      description: 'Content and commerce platform for a Christian library: ebooks, audiobooks, courses, and articles with a single checkout.',
       image: pilgrimLogo,
       tags: ['Python', 'Django', 'Postgres', 'Cassandra', 'AWS', 'CI/CD', 'Firebase'],
       github: 'https://github.com/arifhidayat65',
@@ -203,7 +203,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
     },
     {
       title: 'Quiet Weather',
-      description: 'Weather app design on React Native. You check the forecast from OpenWeatherMap without clutter.',
+      description: 'Weather app design on React Native: a clean OpenWeatherMap forecast without clutter.',
       image: weatherLogo,
       tags: ['Figma', 'Illustration', 'React Native'],
       github: '',
@@ -217,22 +217,22 @@ export const fetchEducation = async (): Promise<Education[]> => {
   await new Promise((resolve) => setTimeout(resolve, 300));
   return [
     {
-      name: "University Computer Indonesia",
+      name: "Universitas Komputer Indonesia (UNIKOM)",
       place: "Indonesia",
-      date: "April, 2017 - Graduated",
-      degree: "Bachelor in software engineering",
+      date: "Graduated April 2017",
+      degree: "Bachelor's Degree in Software Engineering",
       description: "",
       skills: [
         "Software Engineering",
-        "web programming",
-        "UI/UX design",
-        "Front-end developing",
-        "Computer Network",
+        "Web Programming",
+        "UI/UX Design",
+        "Front-End Development",
+        "Computer Networks",
         "Agile",
-        "OS",
-        "Data Structure",
-        "Quality",
-        "Database"
+        "Operating Systems",
+        "Data Structures",
+        "Quality Assurance",
+        "Database Systems"
       ],
       image: '/unikom.webp'
     }
@@ -245,15 +245,15 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
     {
       company: 'PT Pam Jaya',
       role: 'Lead Software Engineer',
-      period: 'Jan 2025 – Oct 2026 (End of Contract)',
-      description: 'Led Jakarta water utility digital upgrade. Contract ended Oct 2026. Shipped systems for real-time water distribution and tanker logistics. Aligned architecture with ops needs, held 99.9% uptime, and sped up deploys with CI/CD.',
+      period: 'Jan 2025 – Oct 2026',
+      description: 'Led Jakarta water utility (BUMD) digital upgrade; contract completed Oct 2026. Shipped systems for real-time water distribution and tanker logistics. Aligned architecture with ops needs, held 99.9% uptime, and sped up deploys with CI/CD.',
       skills: ['Technical Leadership', 'System Architecture', 'CI/CD', 'Cloud Infrastructure', 'React', 'Node.js'],
       image: '/Mobil-Tangki-SDD_files/logoMobilTangki.png'
     },
     {
       company: 'Bank Syariah Indonesia (BSI)',
       role: 'Lead Software Engineer',
-      period: '2023 - 2024',
+      period: '2023 – 2024',
       description: 'Owned core digital assets for Indonesia’s largest Sharia bank. Built high-traffic portals, met Sharia and OJK compliance 100%, rebuilt transaction engines for lower latency, mentored 15+ developers.',
       skills: ['Team Leadership', 'Python', 'Django', 'Security Compliance', 'Database Optimization', 'Banking Systems'],
       image: bsiLogo
@@ -261,28 +261,28 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
     {
       company: 'PT Bank Sinarmas MSIGLIFE',
       role: 'Senior Backend Developer',
-      period: 'Jan 2021 - Des 2022',
-      description: 'Built core backend for a life insurer (JV with MSIG Japan). Broke a monolith into Spring Boot microservices, integrated partner APIs for real-time policy issuance, hardened data security.',
-      skills: ['Microservices', 'Java', 'Springboot', 'Oracle', 'API Management', 'Quality Engineering']
+      period: 'Jan 2021 – Dec 2022',
+      description: 'Built core backend for a life insurer (JV with MSIG Japan). Decomposed the monolith into Spring Boot microservices, integrated partner APIs for real-time policy issuance, hardened data security.',
+      skills: ['Microservices', 'Java', 'Spring Boot', 'Oracle', 'API Management', 'Quality Engineering']
     },
     {
       company: 'PT Enigmacamp Cipta Humanika',
       role: 'Technical Lead & Backend Specialist',
-      period: 'Jun 2019 - Sep 2021',
+      period: 'Jun 2019 – Sep 2021',
       description: 'Ran technical delivery for an IT incubator. Owned client project lifecycles, built Enigma Camp 2.0 LMS for thousands of concurrent students, standardized backend workflows and lifted output 30%.',
       skills: ['Project Management', 'Backend Development', 'Technical Mentoring', 'Architecture Design']
     },
     {
       company: 'Bank Permata',
       role: 'Fullstack Web Developer',
-      period: 'Jan 2018 - Des 2019',
+      period: 'Jan 2018 – Dec 2019',
       description: 'Shipped web products for FMCG and finance clients with React and Java. Built responsive interfaces backed by solid logic.',
       skills: ['Fullstack Development', 'ReactJS', 'TypeScript', 'Flutter', 'Java', 'Redux']
     },
     {
       company: 'Walden Global Service',
       role: 'Backend Engineer (PHP/Laravel)',
-      period: 'Jan 2017 - Des 2018',
+      period: 'Jan 2017 – Dec 2018',
       description: 'Built and ran high-concurrency Laravel apps. Tuned databases and servers to handle peak e-commerce traffic.',
       skills: ['Laravel', 'PHP', 'MySQL', 'Server Management', 'VueJS']
     }

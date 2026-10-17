@@ -1,46 +1,76 @@
 import { motion } from 'framer-motion';
-import { Code2, Palette, Terminal } from 'lucide-react';
+import { Cloud, Code2, Palette, Server } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { skillAssets } from '../../api/portfolioApi';
 import './SkillsSection.css';
 
-const skillGroups = [
+interface Skill {
+  name: string;
+  icon?: string;
+}
+
+interface SkillGroupData {
+  title: string;
+  icon: ReactNode;
+  className: string;
+  skills: Skill[];
+}
+
+const skillGroups: SkillGroupData[] = [
   {
-    title: 'Development',
-    icon: <Code2 size={24} />,
+    title: 'Backend & Architecture',
+    icon: <Server size={24} />,
     className: 'dev-group',
     skills: [
-      { name: 'Python', icon: skillAssets.python },
-      { name: 'Javascript', icon: skillAssets.javascript },
+      { name: 'Node.js' },
       { name: 'TypeScript', icon: skillAssets.javascript },
-      { name: 'Java', icon: skillAssets.java },
-      { name: 'C#', icon: skillAssets.csharp },
-      { name: 'PHP', icon: skillAssets.php },
-      { name: 'React', icon: skillAssets.react },
-      { name: 'Vue', icon: skillAssets.vue },
+      { name: 'Python · Django', icon: skillAssets.python },
+      { name: 'Java · Spring Boot', icon: skillAssets.java },
+      { name: 'Go' },
+      { name: 'PHP · Laravel', icon: skillAssets.php },
+      { name: 'Microservices' },
+      { name: 'Event-Driven APIs' },
+      { name: 'SQL · NoSQL' },
     ]
   },
   {
-    title: 'Design',
+    title: 'Product & UX',
     icon: <Palette size={24} />,
     className: 'design-group',
     skills: [
       { name: 'Figma', icon: skillAssets.figma },
-      { name: 'Adobe XD', icon: skillAssets.xd },
-      { name: 'Photoshop', icon: skillAssets.photoshop },
-      { name: 'Illustrator', icon: skillAssets.illustrator },
+      { name: 'UI/UX Design' },
     ]
   },
   {
-    title: 'Core & Tools',
-    icon: <Terminal size={24} />,
-    className: 'tools-group',
+    title: 'Frontend & Mobile',
+    icon: <Code2 size={24} />,
+    className: 'frontend-group',
     skills: [
+      { name: 'React', icon: skillAssets.react },
+      { name: 'Vue', icon: skillAssets.vue },
+      { name: 'JavaScript', icon: skillAssets.javascript },
+      { name: 'React Native' },
       { name: 'HTML5', icon: skillAssets.html },
       { name: 'CSS3', icon: skillAssets.css },
-      { name: 'Git', icon: skillAssets.git },
-      { name: 'Bootstrap', icon: skillAssets.bootstrap },
     ]
-  }
+  },
+  {
+    title: 'Cloud, Data & DevOps',
+    icon: <Cloud size={24} />,
+    className: 'tools-group',
+    skills: [
+      { name: 'AWS' },
+      { name: 'Google Cloud' },
+      { name: 'Docker' },
+      { name: 'CI/CD' },
+      { name: 'PostgreSQL' },
+      { name: 'MySQL · Oracle' },
+      { name: 'Cassandra' },
+      { name: 'Firebase' },
+      { name: 'Git', icon: skillAssets.git },
+    ]
+  },
 ];
 
 const SkillsSection = () => {
@@ -92,9 +122,9 @@ const SkillsSection = () => {
                 {group.title}
               </h3>
               <div className="skills-flex">
-                {group.skills.map((skill, sIdx) => skill.icon && (
+                {group.skills.map((skill, sIdx) => (
                   <div key={sIdx} className="skill-badge" title={skill.name}>
-                    <img src={skill.icon} alt={skill.name} className="skill-logo" />
+                    {skill.icon && <img src={skill.icon} alt="" className="skill-logo" />}
                     <span className="skill-name">{skill.name}</span>
                   </div>
                 ))}

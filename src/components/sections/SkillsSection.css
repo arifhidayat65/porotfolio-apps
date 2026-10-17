@@ -32,8 +32,12 @@
   grid-column: span 4;
 }
 
+.frontend-group {
+  grid-column: span 4;
+}
+
 .tools-group {
-  grid-column: span 12;
+  grid-column: span 8;
 }
 
 .group-title {
@@ -105,7 +109,7 @@
 }
 
 @media (max-width: 1200px) {
-  .dev-group, .design-group {
+  .dev-group, .design-group, .frontend-group, .tools-group {
     grid-column: span 12;
   }
 }

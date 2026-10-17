@@ -36,7 +36,7 @@ const AboutSection = () => {
                   <Award size={20} />
                 </div>
                 <div>
-                  <span className="stat-num">8+</span>
+                  <span className="stat-num">9+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
               </div>

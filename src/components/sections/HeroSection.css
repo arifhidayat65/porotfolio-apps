@@ -91,6 +91,11 @@
   color: #f59e0b;
 }
 
+.description-icon.quaternary {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+}
+
 .hero-description {
   font-size: 1.125rem;
   color: var(--text-muted);

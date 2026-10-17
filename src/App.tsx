@@ -10,6 +10,7 @@ import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
 import ExperienceSection from './components/sections/ExperienceSection';
 import SkillsSection from './components/sections/SkillsSection';
+import RemoteSection from './components/sections/RemoteSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import ContactSection from './components/sections/ContactSection';
 import LoadingScreen from './components/ui/LoadingScreen';
@@ -89,6 +90,7 @@ function AppContent() {
         <AboutSection />
         <ExperienceSection />
         <SkillsSection />
+        <RemoteSection />
         <ProjectsSection />
         <ContactSection />
       </main>

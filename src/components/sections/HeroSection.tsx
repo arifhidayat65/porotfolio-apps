@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
-import { Download, Send, Briefcase, Target, Users } from 'lucide-react';
+import { Download, Send, Briefcase, Target, Users, Globe } from 'lucide-react';
 import { usePortfolioData } from '../../hooks/usePortfolioData';
 import Wave from '../ui/Wave';
 import './HeroSection.css';
@@ -54,7 +54,7 @@ const HeroSection = () => {
             <img src={profile.avatar} alt={`${profile.firstName} ${profile.lastName}`} className="profile-img" />
             <div className="status-badge">
               <span className="pulse"></span>
-              Available for Hire
+              Open to Remote Roles
             </div>
           </div>
         </motion.div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 <Briefcase size={22} />
               </div>
               <p className="hero-description">
-                Lead Software Engineer. I design and ship systems for finance, insurance, and public utilities.
+                Lead Software Engineer — 9+ years of systems for finance, insurance, and public utilities.
               </p>
             </div>
 
@@ -85,6 +85,15 @@ const HeroSection = () => {
               </div>
               <p className="hero-description">
                 I align <strong>Business Goals</strong> with <strong>Technical Delivery</strong>.
+              </p>
+            </div>
+
+            <div className="description-item">
+              <div className="description-icon quaternary">
+                <Globe size={22} />
+              </div>
+              <p className="hero-description">
+                Remote-ready (UTC+7) — live overlap with APAC, India & the Gulf; evening overlap with UK/EU.
               </p>
             </div>
 
@@ -107,7 +116,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-actions">
-            <a href={profile.cvUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a href={profile.cvUrl} download="Arif-Hidayat-CV.pdf" className="btn btn-primary">
               <Download size={18} /> Download CV
             </a>
             <a href="#contact" className="btn btn-outline">
