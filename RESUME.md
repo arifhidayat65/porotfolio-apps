@@ -1,6 +1,6 @@
 # ARIF HIDAYAT
 **Lead Software Engineer — Banking, Fintech & Public Utilities**  
-Jakarta, Indonesia (UTC+7) · Remote-ready | [arifhidayat1010@gmail.com](mailto:arifhidayat1010@gmail.com)  
+Jakarta, Indonesia (UTC+7) · Remote-ready | [arif.hidayat@aigen-global.com](mailto:arif.hidayat@aigen-global.com)  
 [https://portofolio-arifhidayat.netlify.app](https://portofolio-arifhidayat.netlify.app) | [https://www.linkedin.com/in/arif-hidayat-8b173212b](https://www.linkedin.com/in/arif-hidayat-8b173212b) | [https://github.com/arifhidayat65](https://github.com/arifhidayat65)
 
 ---
